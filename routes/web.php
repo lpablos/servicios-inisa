@@ -20,7 +20,9 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 Route::prefix('catalogos')->group(function () {
-    Route::get('/cotizacion', [CatalogosController::class, 'showCotizacion'])->name('show.catalogos.cotizacion');
-    Route::get('/cliente', [CatalogosController::class, 'showCliente'])->name('show.catalogos.cliente');
-    Route::get('/departamento', [CatalogosController::class, 'showDepartamento'])->name('ashow.catalogos.departamento');
+    Route::controller(CatalogosController::class)->group(function () {
+        Route::get('cotizacion', 'showCotizacion')->name('show.catalogos.cotizacion');
+        Route::get('cliente', 'showCliente')->name('show.catalogos.cliente');
+        Route::post('departamento', 'showDepartamento')->name('ashow.catalogos.departamento');
+    });
 });
