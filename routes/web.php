@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\CatalogosController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,5 +18,9 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Home');
-    // return view('welcome');
+});
+Route::prefix('catalogos')->group(function () {
+    Route::get('/cotizacion', [CatalogosController::class, 'showCotizacion'])->name('show.catalogos.cotizacion');
+    Route::get('/cliente', [CatalogosController::class, 'showCliente'])->name('show.catalogos.cliente');
+    Route::get('/departamento', [CatalogosController::class, 'showDepartamento'])->name('ashow.catalogos.departamento');
 });
