@@ -1,12 +1,11 @@
+import React from 'react';
+import { Button } from 'react-bootstrap';
 
-const index = () => {
+export default function ExamplePage() {
     return (
         <div>
-            <div>
-                <h1>Cliente</h1>
-            </div>
+            <h1>Hola desde ExamplePage</h1>
+            <Button variant="success">Botón de Ejemplo</Button>
         </div>
     );
 }
-
-export default index;

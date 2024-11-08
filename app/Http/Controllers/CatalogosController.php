@@ -19,11 +19,11 @@ class CatalogosController extends Controller
 
     public function showCotizacion(){
 
-        
-        return Inertia::render('Catalogos/Cliente/index');
+
+        return Inertia::render('Catalogos/Cotizacion/index');
     }
     public function showCliente(){
-        return Inertia::render('Catalogos/Cotizacion/index');
+        return Inertia::render('Catalogos/Cliente/index');
     }
     public function showDepartamento(){
         return Inertia::render('Catalogos/Departamento/index');
